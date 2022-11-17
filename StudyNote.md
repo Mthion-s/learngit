@@ -227,7 +227,7 @@ Git和其他版本控制系统如SVN的一个不同之处就是有暂存区的�
 
 就是你在电脑里能看到的目录，比如我的`learngit`文件夹就是一个工作区：
 
-![image-20221116232311503](E:\workDir\learnDir\learngit\StudyNote-images\image-20221116232311503.png)
+![image-20221116232311503](StudyNote-images\image-20221116232311503.png)
 
 
 
@@ -237,7 +237,7 @@ Git和其他版本控制系统如SVN的一个不同之处就是有暂存区的�
 
 Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支`master`，以及指向`master`的一个指针叫`HEAD`。
 
-![image-20221116232358604](E:\workDir\learnDir\learngit\StudyNote-images\image-20221116232358604.png)
+![image-20221116232358604](StudyNote-images\image-20221116232358604.png)
 
 前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：
 
@@ -292,7 +292,7 @@ Changes to be committed:
 
 现在，暂存区的状态就变成这样了：
 
-![image-20221116233013452](E:\workDir\learnDir\learngit\StudyNote-images\image-20221116233013452.png)
+![image-20221116233013452](StudyNote-images\image-20221116233013452.png)
 
 所以，`git add`命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行`git commit`就可以一次性把暂存区的所有修改提交到分支。
 
@@ -307,7 +307,7 @@ $ git commit -m "understand how stage works"
 
 现在版本库变成了这样，暂存区就没有任何内容了：
 
-![image-20221116233130539](E:\workDir\learnDir\learngit\StudyNote-images\image-20221116233130539.png)
+![image-20221116233130539](StudyNote-images\image-20221116233130539.png)
 
 
 
@@ -448,7 +448,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 第2步：登陆Git Hub，打开“Account settings”，“SSH Keys”页面：
 
-<img src="E:\workDir\learnDir\learngit\StudyNote-images\image-20221117000743367.png" alt="image-20221117000743367" style="zoom: 67%;" />
+<img src="StudyNote-images\image-20221117000743367.png" alt="image-20221117000743367" style="zoom: 67%;" />
 
 
 
@@ -468,9 +468,9 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 现在的情景是，你已经在本地创建了一个Git仓库后，又想在`GitHub`创建一个Git仓库，并且让这两个仓库进行远程同步，这样，`GitHub`上的仓库既可以作为备份，又可以让其他人通过该仓库来协作，真是一举多得。
 
-在GitHub上创建learngit仓库
+在`GitHub`上创建`learngit`仓库
 
-![image-20221117003209273](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117003209273.png)
+![image-20221117003209273](StudyNote-images\image-20221117003209273.png)
 
 
 
@@ -521,7 +521,7 @@ git checkout -b <branch-name> oringin/<branch-name>
 
 #### 3、SSH警告
 
-当你第一次使用Git的`clone`或者`push`命令连接GitHub时，会得到一个警告：
+当你第一次使用Git的`clone`或者`push`命令连接`GitHub`时，会得到一个警告：
 
 ```
 The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
@@ -565,7 +565,7 @@ $ git remote rm origin
 
 在`GitHub`上创建远程库：`gitskills`
 
-<img src="E:\workDir\learnDir\learngit\StudyNote-images\image-20221117004816748.png" alt="image-20221117004816748" style="zoom: 80%;" />
+<img src="StudyNote-images\image-20221117004816748.png" alt="image-20221117004816748" style="zoom: 80%;" />
 
 现在，远程库已经准备好了，下一步是用命令`git clone`克隆一个本地库：
 
@@ -611,29 +611,29 @@ README.md
 
 一开始的时候，`master`分支是一条线，Git用`master`指向最新的提交，再用`HEAD`指向`master`，就能确定当前分支，以及当前分支的提交点：
 
-![image-20221117005803024](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117005803024.png)
+![image-20221117005803024](StudyNote-images\image-20221117005803024.png)
 
 每次提交，`master`分支都会向前移动一步，这样，随着你不断提交，`master`分支的线也越来越长。
 
 当我们创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
 
-![image-20221117005830562](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117005830562.png)
+![image-20221117005830562](StudyNote-images\image-20221117005830562.png)
 
 你看，Git创建一个分支很快，因为除了增加一个`dev`指针，改改`HEAD`的指向，工作区的文件都没有任何变化！
 
 不过，从现在开始，对工作区的修改和提交就是针对`dev`分支了，比如新提交一次后，`dev`指针往前移动一步，而`master`指针不变：
 
-![image-20221117005854170](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117005854170.png)
+![image-20221117005854170](StudyNote-images\image-20221117005854170.png)
 
 假如我们在`dev`上的工作完成了，就可以把`dev`合并到`master`上。Git怎么合并呢？最简单的方法，就是直接把`master`指向`dev`的当前提交，就完成了合并：
 
-![image-20221117005917633](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117005917633.png)
+![image-20221117005917633](StudyNote-images\image-20221117005917633.png)
 
 所以Git合并分支也很快！就改改指针，工作区内容也不变！
 
 合并完分支后，甚至可以删除`dev`分支。删除`dev`分支就是把`dev`指针给删掉，删掉后，我们就剩下了一条`master`分支：
 
-![image-20221117005950759](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117005950759.png)
+![image-20221117005950759](StudyNote-images\image-20221117005950759.png)
 
 下面开始实战。
 
@@ -690,7 +690,7 @@ Switched to branch 'master'
 
 切换回`master`分支后，再查看一个`readme.txt`文件，刚才添加的内容不见了！因为那个提交是在`dev`分支上，而`master`分支此刻的提交点并没有变：
 
-![image-20221117010509086](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117010509086.png)
+![image-20221117010509086](StudyNote-images\image-20221117010509086.png)
 
 现在，我们把`dev`分支的工作成果合并到`master`分支上：
 
@@ -796,7 +796,7 @@ $ git commit -m "& simple"
 
 现在，`master`分支和`feature1`分支各自都分别有新的提交，变成了这样：
 
-![image-20221117012054388](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117012054388.png)
+![image-20221117012054388](StudyNote-images\image-20221117012054388.png)
 
 这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，我们试试看：
 
@@ -857,7 +857,7 @@ $ git commit -m "conflict fixed"
 
 现在，`master`分支和`feature1`分支变成了下图所示：
 
-![image-20221117012129848](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117012129848.png)
+![image-20221117012129848](StudyNote-images\image-20221117012129848.png)
 
 用带参数的`git log`也可以看到分支的合并情况：
 
@@ -947,7 +947,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 可以看到，不使用`Fast forward`模式，merge后就像这样：
 
-![image-20221117012333043](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117012333043.png)
+![image-20221117012333043](StudyNote-images\image-20221117012333043.png)
 
 
 
@@ -963,7 +963,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 所以，团队合作的分支看起来就像这样：
 
-![image-20221117012455820](E:\workDir\learnDir\learngit\StudyNote-images\image-20221117012455820.png)
+![image-20221117012455820](StudyNote-images\image-20221117012455820.png)
 
 
 
