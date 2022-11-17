@@ -4,6 +4,8 @@
 
 ​	git是目前世界上最先进的分布式版本控制系统，版本控制：在我们完成一项工作的时候，中途会经历很多过程，版本控制就是管理这些过程；
 
+**版本控制**（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。简单来说就是用于管理多人协同开发项目的技术。
+
 #### 2、集中式vs分布式
 
 ​	`CVS`及`SVN`都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？
@@ -33,7 +35,9 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
 
-因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。
+因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。设置好用户名邮箱之后就可以使用版本库了，对于每次`commit` ，`Git`都会记录其用户名和邮箱。使用 `git log` 命令可以查看
+
+![image-20221117233852854](StudyNote-images/image-20221117233852854.png)
 
 注意`git config`命令的`--global`参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址（将--global改成--local）。
 
@@ -123,7 +127,7 @@ $ git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git checkout -- <file>..." to  discard changes in working directory)
 
 	modified:   readme.txt
 
