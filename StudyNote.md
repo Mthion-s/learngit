@@ -378,6 +378,13 @@ $ git checkout -- readme.txt
 
 对于已经`commit`到版本库的修改，我们只能采用上一节的`git reset --hard <commit id>`命令来回到上一个提交；但是对于已经从版本库push到远程仓库的修改我们无法撤回。
 
+**另外**：使用`git restore`命令也可以撤销修改
+
+```
+git restore --staged <file>  //撤销已经add到暂存区的修改(修改还在，只是修改未添加到暂存区)
+git restore <file>			//撤销未添加到暂存区的修改，使文件回到版本库一样的状态，跟上面的git checkout -- file命令相同
+```
+
 
 
 #### 7、删除文件
@@ -518,7 +525,7 @@ git branch --set-upstream <branch-name> origin/<branch-name>
 同时也可在创建本地分支时建立关联：
 
 ```
-git checkout -b <branch-name> oringin/<branch-name>
+git checkout -b <branch-name> origin/<branch-name>
 ```
 
 本地和远程分支的名称可以不一样，但是考虑到实际工作，最好设置成相同的名称
