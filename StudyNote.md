@@ -490,7 +490,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 现在，我们根据`GitHub`的提示，在本地的`learngit`仓库下运行命令：
 
 ```
-$ git remote add origin git@github.com:Mthios-s/learngit.git
+$ git remote add origin git@github.com:Mthion-s/learngit.git
 ```
 
 注意上面的`Mthion-s`对应的`GitHub`用户名别输错了，输错了的话就关联到别人的仓库去了，关联到别人仓库或许可以pull，但是因为SSH Key公钥不在鄙人的账户列表中，故而不能push
